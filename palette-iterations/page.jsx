@@ -16,6 +16,7 @@ function Nav() {
     { href: '#writing', label: 'Writing' },
     { href: '#open-source', label: 'Open source' },
     { href: '#about', label: 'About' },
+    { href: '#subscribe', label: 'Newsletter' },
   ];
   return (
     <nav className="sticky top-0 z-50 transition-colors duration-150" style={{ background: 'var(--paper)', borderBottom: scrolled ? '1px solid var(--rule)' : '1px solid transparent' }}>
@@ -52,6 +53,7 @@ function Hero() {
           <div className="flex flex-wrap items-center gap-4 pt-3">
             <a href="#talks" className="inline-flex items-center gap-2 text-[14px] font-medium px-[18px] py-[10px] rounded-[4px] no-underline" style={{ background: 'var(--ink)', color: 'var(--paper)' }}>Read recent talks</a>
             <a href="#writing" className="inline-flex items-center gap-2 text-[14px] font-medium px-[18px] py-[10px] rounded-[4px] no-underline" style={{ border: '1px solid var(--rule)', color: 'var(--ink)' }}>Recent writing</a>
+            <a href="https://yashsharma.substack.com/subscribe" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-[14px] font-medium px-[18px] py-[10px] rounded-[4px] no-underline" style={{ border: '1px solid var(--rule)', color: 'var(--ink)' }}>Subscribe on Substack &rarr;</a>
             <a href="mailto:yashsharma2572@gmail.com" className="text-[14px] link-inline ml-2" style={{ color: 'var(--ink-soft)' }}>or email me</a>
           </div>
         </div>
@@ -528,6 +530,48 @@ function Press() {
   );
 }
 
+// ── Subscribe (Substack) ───────────────────────────────────────────────────
+function Subscribe() {
+  return (
+    <section id="subscribe" className="max-w-[1280px] mx-auto px-8 lg:px-16 py-24" style={{ borderTop: '1px solid var(--rule)' }}>
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 lg:col-span-3">
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-faint)' }}>newsletter</span>
+        </div>
+        <div className="col-span-12 lg:col-span-8 flex flex-col gap-6">
+          <h2 className="font-display text-[40px] lg:text-[48px] leading-[1.1] m-0" style={{ color: 'var(--ink)', letterSpacing: '-0.015em' }}>
+            A short letter when there&rsquo;s something worth saying.
+          </h2>
+          <p className="text-[17px] leading-[1.55] max-w-[58ch] m-0" style={{ color: 'var(--ink-soft)' }}>
+            Field notes on cloud-native, AI infrastructure, and the work I do in the open. No schedule, no sign-up bait &mdash; only when the writing has earned the inbox.
+          </p>
+          <div className="flex flex-wrap items-center gap-4 mt-2">
+            <a
+              href="https://yashsharma1911.substack.com/subscribe"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[14px] font-medium px-[20px] py-[12px] rounded-[4px] no-underline"
+              style={{ background: 'var(--ink)', color: 'var(--paper)' }}
+            >
+              Subscribe on Substack &rarr;
+            </a>
+            <a
+              href="https://yashsharma1911.substack.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[14px] link-inline ml-2"
+              style={{ color: 'var(--ink-soft)' }}
+            >
+              Read previous issues &rarr;
+            </a>
+          </div>
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em] mt-1" style={{ color: 'var(--ink-faint)' }}>hosted on substack &middot; one-click unsubscribe</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── Footer ─────────────────────────────────────────────────────────────────
 function Footer() {
   return (
@@ -606,6 +650,7 @@ function App() {
       />
       <Social />
       <Press />
+      <Subscribe />
       <Footer />
     </div>
   );
